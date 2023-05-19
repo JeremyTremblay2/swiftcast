@@ -27,7 +27,7 @@ public struct Podcast: CustomStringConvertible, Hashable, Identifiable {
         self.numberOfReviews = numberOfReviews
         self.category = category
         self.publicationFrequency = publicationFrequency
-        self.episodes = episodes
+        self.episodes = episodes.sorted(by: { $0.date > $1.date })
     }
     
     public var description: String {

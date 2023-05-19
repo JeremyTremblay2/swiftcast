@@ -5,7 +5,7 @@ struct Stub {
     private var menuSections: [MenuSection] = []
     
     public mutating func loadPodcasts() -> [Podcast] {
-        guard !podcasts.isEmpty else {
+        guard podcasts.isEmpty else {
             return podcasts
         }
         
@@ -121,7 +121,7 @@ struct Stub {
     }
     
     public mutating func loadMenuSections() -> [MenuSection] {
-        guard !menuSections.isEmpty else {
+        guard menuSections.isEmpty else {
             return menuSections
         }
         

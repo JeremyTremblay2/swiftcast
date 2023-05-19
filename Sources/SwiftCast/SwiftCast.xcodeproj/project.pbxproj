@@ -9,8 +9,11 @@
 /* Begin PBXBuildFile section */
 		EC17DC092A179A2800FCCC59 /* PublicationFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC17DC082A179A2800FCCC59 /* PublicationFrequency.swift */; };
 		EC17DC0B2A17A37D00FCCC59 /* MenuSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC17DC0A2A17A37D00FCCC59 /* MenuSection.swift */; };
+		EC3C61E12A17C92F00029665 /* EpisodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C61E02A17C92F00029665 /* EpisodeView.swift */; };
+		EC3C61E42A17CE3900029665 /* CalendarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C61E32A17CE3900029665 /* CalendarExtensions.swift */; };
+		EC3C61E62A17DDCC00029665 /* DurationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C61E52A17DDCC00029665 /* DurationExtensions.swift */; };
 		ECED09062A15150300F94EB1 /* SwiftCastApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECED09052A15150300F94EB1 /* SwiftCastApp.swift */; };
-		ECED09082A15150300F94EB1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECED09072A15150300F94EB1 /* ContentView.swift */; };
+		ECED09082A15150300F94EB1 /* PodcastDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECED09072A15150300F94EB1 /* PodcastDetailView.swift */; };
 		ECED090A2A15150400F94EB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECED09092A15150400F94EB1 /* Assets.xcassets */; };
 		ECED090D2A15150400F94EB1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECED090C2A15150400F94EB1 /* Preview Assets.xcassets */; };
 		ECED09172A15150400F94EB1 /* SwiftCastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECED09162A15150400F94EB1 /* SwiftCastTests.swift */; };
@@ -41,9 +44,12 @@
 /* Begin PBXFileReference section */
 		EC17DC082A179A2800FCCC59 /* PublicationFrequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicationFrequency.swift; sourceTree = "<group>"; };
 		EC17DC0A2A17A37D00FCCC59 /* MenuSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSection.swift; sourceTree = "<group>"; };
+		EC3C61E02A17C92F00029665 /* EpisodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeView.swift; sourceTree = "<group>"; };
+		EC3C61E32A17CE3900029665 /* CalendarExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarExtensions.swift; sourceTree = "<group>"; };
+		EC3C61E52A17DDCC00029665 /* DurationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationExtensions.swift; sourceTree = "<group>"; };
 		ECED09022A15150300F94EB1 /* SwiftCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECED09052A15150300F94EB1 /* SwiftCastApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCastApp.swift; sourceTree = "<group>"; };
-		ECED09072A15150300F94EB1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		ECED09072A15150300F94EB1 /* PodcastDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastDetailView.swift; sourceTree = "<group>"; };
 		ECED09092A15150400F94EB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECED090C2A15150400F94EB1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ECED09122A15150400F94EB1 /* SwiftCastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftCastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +87,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC3C61E22A17CE2700029665 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EC3C61E32A17CE3900029665 /* CalendarExtensions.swift */,
+				EC3C61E52A17DDCC00029665 /* DurationExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EC3C61E72A17E50A00029665 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ECED09072A15150300F94EB1 /* PodcastDetailView.swift */,
+				EC3C61E02A17C92F00029665 /* EpisodeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		ECED08F92A15150300F94EB1 = {
 			isa = PBXGroup;
 			children = (
@@ -104,9 +128,10 @@
 		ECED09042A15150300F94EB1 /* SwiftCast */ = {
 			isa = PBXGroup;
 			children = (
+				EC3C61E72A17E50A00029665 /* Views */,
+				EC3C61E22A17CE2700029665 /* Extensions */,
 				ECED092F2A151CD300F94EB1 /* Model */,
 				ECED09052A15150300F94EB1 /* SwiftCastApp.swift */,
-				ECED09072A15150300F94EB1 /* ContentView.swift */,
 				ECED09092A15150400F94EB1 /* Assets.xcassets */,
 				ECED090B2A15150400F94EB1 /* Preview Content */,
 			);
@@ -280,9 +305,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECED09082A15150300F94EB1 /* ContentView.swift in Sources */,
+				EC3C61E12A17C92F00029665 /* EpisodeView.swift in Sources */,
+				ECED09082A15150300F94EB1 /* PodcastDetailView.swift in Sources */,
 				EC17DC092A179A2800FCCC59 /* PublicationFrequency.swift in Sources */,
 				EC17DC0B2A17A37D00FCCC59 /* MenuSection.swift in Sources */,
+				EC3C61E42A17CE3900029665 /* CalendarExtensions.swift in Sources */,
+				EC3C61E62A17DDCC00029665 /* DurationExtensions.swift in Sources */,
 				ECED09352A15213400F94EB1 /* Stub.swift in Sources */,
 				ECED09332A151ED300F94EB1 /* Episode.swift in Sources */,
 				ECED09062A15150300F94EB1 /* SwiftCastApp.swift in Sources */,

@@ -11,7 +11,8 @@ import SwiftUI
 struct SwiftCastApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            var stub = Stub()
+            EpisodeView(episode: stub.loadPodcasts()[0].episodes[0])
         }
     }
 }
