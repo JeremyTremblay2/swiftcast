@@ -8,45 +8,23 @@
 import SwiftUI
 
 struct PodCastDetailView: View {
-    var body: some View {
-        VStack {
-            Image("chaleur_humaine")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .cornerRadius(7)
-                .shadow(color: .black, radius: 8)
-            Text("Chaleur humaine")
-                .padding(.top, 4)
-                .padding(.bottom, 1)
-            
-            Label("Le Monde >", systemImage: "tv")
-                .foregroundColor(.gray)
-                .font(.system(size: 12))
-                .padding(.bottom, 6)
-            
-            Button(action: play) {
-                Label("Dernier épisode", systemImage: "play.fill")
-                    .bold()
-                    .padding(4)
-            }
-            .buttonStyle(.bordered)
-            .tint(.black)
-            
-            Text("mardi: comment se libérer de la voiture individuelle ?: **** Recevez gratuitement tous les mardis l'infolette Chaleur humaine en vous")
-            
-            Text("4,8 (458)・Actualités・Chaque semaine")
-        }
-        .background(.orange)
-        .padding(16)
-    }
+    var podcast: Podcast
     
-    private func play() -> Void {
-        
+    var body: some View {
+        ScrollView {
+            PodcastCoverView(podcast: podcast)
+            PodcastCoverView(podcast: podcast)
+        }
+        .padding(16)
     }
 }
 
 struct PodCastDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PodCastDetailView()
+        var stub = Stub()
+        let podcasts = stub.loadPodcasts()
+        Group {
+            PodCastDetailView(podcast: podcasts[0]).preferredColorScheme(.dark)
+        }
     }
 }

@@ -10,8 +10,10 @@ import SwiftUI
 @main
 struct SwiftCastApp: App {
     var body: some Scene {
+        var stub = Stub()
+        
         WindowGroup {
-            PodCastDetailView()
+            PodCastDetailView(podcast: stub.loadPodcasts().first!)
         }
     }
 }
