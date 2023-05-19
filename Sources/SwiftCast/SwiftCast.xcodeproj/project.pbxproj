@@ -12,6 +12,7 @@
 		EC3C61E12A17C92F00029665 /* EpisodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C61E02A17C92F00029665 /* EpisodeView.swift */; };
 		EC3C61E42A17CE3900029665 /* CalendarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C61E32A17CE3900029665 /* CalendarExtensions.swift */; };
 		EC3C61E62A17DDCC00029665 /* DurationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C61E52A17DDCC00029665 /* DurationExtensions.swift */; };
+		EC3C61E92A17E74800029665 /* CurrentEpisodePlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C61E82A17E74800029665 /* CurrentEpisodePlayingView.swift */; };
 		ECED09062A15150300F94EB1 /* SwiftCastApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECED09052A15150300F94EB1 /* SwiftCastApp.swift */; };
 		ECED09082A15150300F94EB1 /* PodcastDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECED09072A15150300F94EB1 /* PodcastDetailView.swift */; };
 		ECED090A2A15150400F94EB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECED09092A15150400F94EB1 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		EC3C61E02A17C92F00029665 /* EpisodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeView.swift; sourceTree = "<group>"; };
 		EC3C61E32A17CE3900029665 /* CalendarExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarExtensions.swift; sourceTree = "<group>"; };
 		EC3C61E52A17DDCC00029665 /* DurationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationExtensions.swift; sourceTree = "<group>"; };
+		EC3C61E82A17E74800029665 /* CurrentEpisodePlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentEpisodePlayingView.swift; sourceTree = "<group>"; };
 		ECED09022A15150300F94EB1 /* SwiftCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECED09052A15150300F94EB1 /* SwiftCastApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCastApp.swift; sourceTree = "<group>"; };
 		ECED09072A15150300F94EB1 /* PodcastDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastDetailView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			children = (
 				ECED09072A15150300F94EB1 /* PodcastDetailView.swift */,
 				EC3C61E02A17C92F00029665 /* EpisodeView.swift */,
+				EC3C61E82A17E74800029665 /* CurrentEpisodePlayingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				ECED09352A15213400F94EB1 /* Stub.swift in Sources */,
 				ECED09332A151ED300F94EB1 /* Episode.swift in Sources */,
 				ECED09062A15150300F94EB1 /* SwiftCastApp.swift in Sources */,
+				EC3C61E92A17E74800029665 /* CurrentEpisodePlayingView.swift in Sources */,
 				ECED09312A151CFF00F94EB1 /* Podcast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

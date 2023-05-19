@@ -4,7 +4,6 @@ public struct Podcast: CustomStringConvertible, Hashable, Identifiable {
     public var id: UUID = UUID()
     var imageName: String
     var title: String
-    var updateDate: Date
     var author: String
     var rating: Float
     var numberOfReviews: Int
@@ -12,16 +11,18 @@ public struct Podcast: CustomStringConvertible, Hashable, Identifiable {
     var publicationFrequency: PublicationFrequency
     var episodes: [Episode]
     
-    public init?(withImage imageName: String, withTitle title: String, withLastUpdateDate updateDate: Date,
-                fromAuthor author: String, withNote rating: Float, fromManyReviews numberOfReviews: Int,
-                fromCategory category: String, withAPublicationFrequency publicationFrequency: PublicationFrequency,
-                withEpisodes episodes: [Episode]) {
+    var updateDate: Date {
+        return episodes.sorted(by: { $0.date > $1.date }).first?.date ?? Date()
+    }
+    
+    public init?(withImage imageName: String, withTitle title: String, fromAuthor author: String,
+                 withNote rating: Float, fromManyReviews numberOfReviews: Int, fromCategory category: String,
+                 withAPublicationFrequency publicationFrequency: PublicationFrequency, withEpisodes episodes: [Episode]) {
         guard episodes.count > 0 else {
             return nil
         }
         self.imageName = imageName
         self.title = title
-        self.updateDate = updateDate
         self.author = author
         self.rating = rating
         self.numberOfReviews = numberOfReviews

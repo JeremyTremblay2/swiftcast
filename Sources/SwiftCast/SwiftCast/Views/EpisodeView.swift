@@ -79,7 +79,6 @@ struct EpisodeView: View {
         }
         return formatter
     }
-
 }
 
 struct EpisodeView_Previews: PreviewProvider {
