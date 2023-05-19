@@ -4,6 +4,26 @@ import SwiftUI
 struct EpisodeView: View {
     var episode: Episode
     
+    private var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMM yyyy"
+        guard let currentWeek = Calendar.isDayInCurrentWeek(date: episode.date) else {
+            return formatter
+        }
+        if currentWeek {
+            formatter.dateFormat = "EEEE"
+        }
+        else {
+            guard let currentYear = Calendar.isDayInCurrentYear(date: episode.date) else {
+                return formatter
+            }
+            if currentYear {
+                formatter.dateFormat = "dd MMM"
+            }
+        }
+        return formatter
+    }
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text(episode.date, formatter: dateFormatter)
@@ -58,26 +78,6 @@ struct EpisodeView: View {
         }
         .padding()
         .frame(width: UIScreen.main.bounds.width, height: 200)
-    }
-    
-    var dateFormatter: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd MMM yyyy"
-        guard let currentWeek = Calendar.isDayInCurrentWeek(date: episode.date) else {
-            return formatter
-        }
-        if currentWeek {
-            formatter.dateFormat = "EEEE"
-        }
-        else {
-            guard let currentYear = Calendar.isDayInCurrentYear(date: episode.date) else {
-                return formatter
-            }
-            if currentYear {
-                formatter.dateFormat = "dd MMM"
-            }
-        }
-        return formatter
     }
 }
 
