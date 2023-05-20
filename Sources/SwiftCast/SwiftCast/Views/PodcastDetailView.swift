@@ -17,13 +17,12 @@ struct PodCastDetailView: View {
     
     var body: some View {
         ScrollView {
-            ZStack {
-                backgroundColor
-                    .ignoresSafeArea()
+            VStack(spacing: 0) {
                 PodcastCoverView(podcast: podcast, paddingLeading: paddingLeading, paddingTrailing: paddingTrailing, backgroundColor: backgroundColor)
-                
+                PodcastCoverDetailView(podcast: podcast, paddingLeading: paddingLeading, paddingTrailing: paddingTrailing, backgroundColor: backgroundColor)
             }
             VStack {
+                
                 FilteringEpisodesView(paddingLeading: paddingLeading, paddingTrailing: paddingTrailing)
                 ForEach (podcast.episodes) { episode in
                     EpisodeWithLineView(episode: episode, paddingLeading: paddingLeading, paddingTrailing: paddingTrailing)

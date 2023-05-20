@@ -16,7 +16,7 @@ struct PodcastListView: View {
                            PodCastDetailView(podcast: podcast)
                        }
                        .padding(.horizontal, 2)
-                       .padding(.top, 30)
+                       .padding(.top, 24)
                    }
                }
                .navigationTitle("Podcasts")
