@@ -5,12 +5,6 @@ struct CurrentEpisodePlayingView : View {
     var podcastName: String
     var episode: Episode
     
-    var dateFormatter: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd MMMM yyyy"
-        return formatter
-    }
-    
     var body: some View {
         ZStack {
             Rectangle()
@@ -33,7 +27,7 @@ struct CurrentEpisodePlayingView : View {
                                 .padding(.bottom, 3)
                                 .lineLimit(1)
                                 .fixedSize(horizontal: false, vertical: true)
-                            Text(episode.date, formatter: dateFormatter)
+                            Text(formatDate(date: episode.date, formatter: generateLongDateFormatter()))
                         }
                         .padding(.leading, 14)
                         Spacer()

@@ -15,6 +15,9 @@
 		EC3C61E92A17E74800029665 /* CurrentEpisodePlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C61E82A17E74800029665 /* CurrentEpisodePlayingView.swift */; };
 		EC3C61EB2A17F13C00029665 /* PodcastCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C61EA2A17F13C00029665 /* PodcastCoverView.swift */; };
 		EC3C61ED2A17F90100029665 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C61EC2A17F90100029665 /* UIImageExtensions.swift */; };
+		EC3C61EF2A1836E500029665 /* PodcastItemThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C61EE2A1836E500029665 /* PodcastItemThumbnail.swift */; };
+		EC3C61F22A18378500029665 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C61F12A18378500029665 /* Utils.swift */; };
+		ECE326D42A18C38700082BB1 /* PodcastListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE326D32A18C38700082BB1 /* PodcastListView.swift */; };
 		ECED09062A15150300F94EB1 /* SwiftCastApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECED09052A15150300F94EB1 /* SwiftCastApp.swift */; };
 		ECED09082A15150300F94EB1 /* PodcastDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECED09072A15150300F94EB1 /* PodcastDetailView.swift */; };
 		ECED090A2A15150400F94EB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECED09092A15150400F94EB1 /* Assets.xcassets */; };
@@ -53,6 +56,9 @@
 		EC3C61E82A17E74800029665 /* CurrentEpisodePlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentEpisodePlayingView.swift; sourceTree = "<group>"; };
 		EC3C61EA2A17F13C00029665 /* PodcastCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastCoverView.swift; sourceTree = "<group>"; };
 		EC3C61EC2A17F90100029665 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		EC3C61EE2A1836E500029665 /* PodcastItemThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastItemThumbnail.swift; sourceTree = "<group>"; };
+		EC3C61F12A18378500029665 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		ECE326D32A18C38700082BB1 /* PodcastListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListView.swift; sourceTree = "<group>"; };
 		ECED09022A15150300F94EB1 /* SwiftCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECED09052A15150300F94EB1 /* SwiftCastApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCastApp.swift; sourceTree = "<group>"; };
 		ECED09072A15150300F94EB1 /* PodcastDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastDetailView.swift; sourceTree = "<group>"; };
@@ -110,8 +116,18 @@
 				EC3C61E02A17C92F00029665 /* EpisodeView.swift */,
 				EC3C61E82A17E74800029665 /* CurrentEpisodePlayingView.swift */,
 				EC3C61EA2A17F13C00029665 /* PodcastCoverView.swift */,
+				EC3C61EE2A1836E500029665 /* PodcastItemThumbnail.swift */,
+				ECE326D32A18C38700082BB1 /* PodcastListView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		EC3C61F02A18377900029665 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EC3C61F12A18378500029665 /* Utils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		ECED08F92A15150300F94EB1 = {
@@ -137,6 +153,7 @@
 		ECED09042A15150300F94EB1 /* SwiftCast */ = {
 			isa = PBXGroup;
 			children = (
+				EC3C61F02A18377900029665 /* Utils */,
 				EC3C61E72A17E50A00029665 /* Views */,
 				EC3C61E22A17CE2700029665 /* Extensions */,
 				ECED092F2A151CD300F94EB1 /* Model */,
@@ -319,11 +336,14 @@
 				EC17DC092A179A2800FCCC59 /* PublicationFrequency.swift in Sources */,
 				EC17DC0B2A17A37D00FCCC59 /* MenuSection.swift in Sources */,
 				EC3C61E42A17CE3900029665 /* CalendarExtensions.swift in Sources */,
+				ECE326D42A18C38700082BB1 /* PodcastListView.swift in Sources */,
+				EC3C61F22A18378500029665 /* Utils.swift in Sources */,
 				EC3C61ED2A17F90100029665 /* UIImageExtensions.swift in Sources */,
 				EC3C61E62A17DDCC00029665 /* DurationExtensions.swift in Sources */,
 				EC3C61EB2A17F13C00029665 /* PodcastCoverView.swift in Sources */,
 				ECED09352A15213400F94EB1 /* Stub.swift in Sources */,
 				ECED09332A151ED300F94EB1 /* Episode.swift in Sources */,
+				EC3C61EF2A1836E500029665 /* PodcastItemThumbnail.swift in Sources */,
 				ECED09062A15150300F94EB1 /* SwiftCastApp.swift in Sources */,
 				EC3C61E92A17E74800029665 /* CurrentEpisodePlayingView.swift in Sources */,
 				ECED09312A151CFF00F94EB1 /* Podcast.swift in Sources */,

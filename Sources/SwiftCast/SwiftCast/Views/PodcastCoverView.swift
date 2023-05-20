@@ -65,7 +65,7 @@ struct PodcastCoverView: View {
                     
                     
                     ZStack {
-                        Text("**\(formatDate(date: podcast.episodes.first!.date)): \(podcast.episodes.first?.title ?? "")**: \(podcast.episodes.first?.script ?? "")")
+                        Text("**\(formatDate(date: podcast.episodes.first!.date, formatter: generateShortDateFormatter(date: podcast.episodes.first!.date))): \(podcast.episodes.first?.title ?? "")**: \(podcast.episodes.first?.script ?? "")")
                             .lineLimit(3)
                             .padding(.top, 16)
                             .padding(.bottom, 12)
@@ -94,28 +94,6 @@ struct PodcastCoverView: View {
         .onAppear {
             loadBackgroundColor()
         }
-    }
-    
-    private func formatDate(date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd"
-        guard let currentWeek = Calendar.isDayInCurrentWeek(date: podcast.episodes.first!.date) else {
-            return formatter.string(from: date)
-        }
-        if currentWeek {
-            formatter.dateFormat = "EEEE"
-            return formatter.string(from: date)
-        }
-        guard let currentYear = Calendar.isDayInCurrentYear(date: podcast.episodes.first!.date) else {
-            return formatter.string(from: date)
-        }
-        if currentYear {
-            formatter.dateFormat = "dd MMM"
-        }
-        else {
-            formatter.dateFormat = "yyyy"
-        }
-        return formatter.string(from: date)
     }
     
     private func loadBackgroundColor() {
