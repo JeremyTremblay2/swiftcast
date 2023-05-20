@@ -15,6 +15,7 @@ struct ContentView<Content: View>: View {
             CurrentEpisodePlayingView(podcastImageName: podcasts.first!.imageName,
                                       podcastName: podcasts.first!.title,
                                       episode: (podcasts.first?.episodes.first)!)
+
         }
     }
 }

@@ -26,9 +26,9 @@ struct MainView: View {
             ContentView(podcasts: podcasts) {
                 PodcastListView(podcasts: podcasts)
             }
-                .tabItem({
-                    Label("Bibliothèque", systemImage: "square.stack.fill")
-                })
+            .tabItem({
+                Label("Bibliothèque", systemImage: "square.stack.fill")
+            })
                 .tag(Tab.library)
             Text("Je suis un pot à thé.")
                 .tabItem({

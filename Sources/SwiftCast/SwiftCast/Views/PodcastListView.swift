@@ -29,8 +29,9 @@ struct PodcastListView: View {
                        .scaledToFit()
                        .frame(width: 20, height: 20)
                        .foregroundColor(PodcastColors.primary)
+                       .padding(.trailing, 8)
                }
-               .padding(.trailing, 8)
+               .padding(.vertical, 8)
                .background(PodcastColors.backgroundSecondary)
                .clipShape(Circle())
            }

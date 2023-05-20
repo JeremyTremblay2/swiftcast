@@ -13,7 +13,7 @@ struct SwiftCastApp: App {
         var stub = Stub()
         let podcasts = stub.loadPodcasts()
         WindowGroup {
-            PodcastListView(podcasts: stub.loadPodcasts())
+            MainView(podcasts: podcasts)
         }
     }
 }

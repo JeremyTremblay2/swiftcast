@@ -1,5 +1,6 @@
 import Foundation
 
+// Not used
 public struct MenuSection: Hashable, CustomStringConvertible, Identifiable {
     public var id: UUID = UUID()
     

@@ -8,8 +8,10 @@ struct CurrentEpisodePlayingView : View {
     var body: some View {
         ZStack {
             Rectangle()
-                .foregroundColor(PodcastColors.backgroundTertiary.opacity(0.4))
+                .foregroundColor(PodcastColors.backgroundTertiary.opacity(0.2))
                 .frame(width: UIScreen.main.bounds.size.width, height: 65)
+                .opacity(0.4)
+                .blur(radius: 5)
             HStack(spacing: 0) {
                 Button(action: {}) {
                     HStack(spacing: 0) {
@@ -20,7 +22,7 @@ struct CurrentEpisodePlayingView : View {
                             .frame(width: 55, height: 55)
                             .shadow(radius: 6, x: 0, y: 3)
                             .padding(.leading, 20)
-                            
+                        
                         VStack(alignment: .leading, spacing: 0) {
                             Text("\(podcastName) \(episode.title)")
                                 .font(.body)
@@ -49,7 +51,7 @@ struct CurrentEpisodePlayingView : View {
                 .padding(.trailing, 16)
                 
                 Button(action: {}) {
-                    Image(systemName: "forward.fill")
+                    Image(systemName: "goforward.30")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 30, height: 30)

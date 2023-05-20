@@ -19,10 +19,8 @@ struct PodcastCoverView: View {
     }
     
     var body: some View {
-        ZStack {
-            backgroundColor
-                .ignoresSafeArea()
-            VStack(spacing: 0) {
+        VStack(spacing: 0) {
+            //VStack(spacing: 0) {
                 //GeometryReader { geo in
                 VStack(spacing: 0) {
                     Image(podcast.imageName)
@@ -69,7 +67,7 @@ struct PodcastCoverView: View {
                         .environment(\.colorScheme, colorScheme  == .dark ? .light : .dark)
                         .cornerRadius(12)
                     }
-                }
+                //}
             }
             .padding(.leading, paddingLeading)
             .padding(.trailing, paddingTrailing)
