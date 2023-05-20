@@ -13,9 +13,7 @@ struct SwiftCastApp: App {
         var stub = Stub()
         let podcasts = stub.loadPodcasts()
         WindowGroup {
-            //PodcastListView(podcasts: stub.loadPodcasts())
-            PodcastCoverView(podcast: podcasts[0], paddingLeading: 20, paddingTrailing: 20, backgroundColor: Color.white)
-                .preferredColorScheme(.dark)
+            PodcastListView(podcasts: stub.loadPodcasts())
         }
     }
 }

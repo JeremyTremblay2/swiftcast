@@ -62,7 +62,7 @@ struct PodcastCoverDetailView: View {
                         .padding(.trailing, 4)
                         .foregroundColor(PodcastColors.foregroundPrimary)
                         .environment(\.colorScheme, colorScheme)
-                    Text("**\(podcast.rating, specifier: "%.1f")** (\(podcast.numberOfReviews))・\(podcast.category)・Chaque semaine")
+                    Text("**\(podcast.rating, specifier: "%.1f")** (\(displayNumberOfReviews(number: podcast.numberOfReviews)))・\(podcast.category)\(displayPublicationFrequency(frequency: podcast.publicationFrequency))")
                         .font(.subheadline)
                         .foregroundColor(PodcastColors.foregroundPrimary)
                         .environment(\.colorScheme, colorScheme)
@@ -77,6 +77,34 @@ struct PodcastCoverDetailView: View {
         .padding(.trailing, paddingTrailing)
         .background(backgroundColor)
     }
+    
+    func displayNumberOfReviews(number: Int) -> String {
+        let num = Double(number)
+        let sign = ((num < 0) ? "-" : "")
+        let abbrev = ["", "k", "M", "B", "T"]
+        
+        var numValue = fabs(num)
+        var index = 0
+        
+        while numValue >= 1000 && index < abbrev.count - 1 {
+            numValue /= 1000
+            index += 1
+        }
+        
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.maximumFractionDigits = (numValue < 10) ? 1 : 0
+        numberFormatter.decimalSeparator = ","
+        
+        let formattedNumber = numberFormatter.string(from: NSNumber(value: numValue)) ?? ""
+        
+        return "\(sign)\(formattedNumber)\(abbrev[index])"
+    }
+    
+    func displayPublicationFrequency(frequency: PublicationFrequency) -> String {
+        let result = "・" + formatPublicationFrequency(frequency: frequency)
+        return result.count == 1 ? "" : result
+    }
 }
 
 struct PodcastCoverDetailView_Previews: PreviewProvider {
@@ -85,7 +113,7 @@ struct PodcastCoverDetailView_Previews: PreviewProvider {
         let podcasts = stub.loadPodcasts()
         Group {
             PodcastCoverDetailView(podcast: podcasts[0], paddingLeading: 20, paddingTrailing: 20, backgroundColor: Color.indigo)
-            PodcastCoverDetailView(podcast: podcasts[0], paddingLeading: 20, paddingTrailing: 20, backgroundColor: Color.black)
+            PodcastCoverDetailView(podcast: podcasts[1], paddingLeading: 20, paddingTrailing: 20, backgroundColor: Color.black)
                 .preferredColorScheme(.dark)
         }
     }

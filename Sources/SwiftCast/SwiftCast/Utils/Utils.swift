@@ -55,3 +55,16 @@ public func formatDate(date: Date, formatter: DateFormatter) -> String {
     }
     return string
 }
+
+public func formatPublicationFrequency(frequency: PublicationFrequency) -> String {
+    switch (frequency) {
+    case .everyDay:
+        return "Tous les jour"
+    case .everyWeek:
+        return "Chaque semaine"
+    case .everyMonth:
+        return "Chaque mois"
+    default:
+        return ""
+    }
+}

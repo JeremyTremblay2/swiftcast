@@ -14,6 +14,9 @@ struct PodCastDetailView: View {
     var paddingTrailing: CGFloat = 20
     
     @State private var backgroundColor: Color = .clear
+    private var iconsColor: Color {
+        return .white
+    }
     
     var body: some View {
         ScrollView {
@@ -32,6 +35,32 @@ struct PodCastDetailView: View {
         .onAppear {
             loadBackgroundColor()
         }
+        .toolbar {
+            HStack {
+                Button(action: {}) {
+                    Image(systemName: "checkmark")
+                        .padding(.trailing, 8)
+                        .foregroundColor(iconsColor)
+                }
+                .background(PodcastColors.backgroundSecondary.opacity(0.2))
+                .clipShape(Circle())
+                .foregroundColor(PodcastColors.primary)
+                
+                Button(action: {}) {
+                    Image(systemName: "ellipsis")
+                        .padding(.trailing, 8)
+                        .foregroundColor(iconsColor)
+                }
+                .background(PodcastColors.backgroundSecondary.opacity(0.2))
+                .clipShape(Circle())
+                .foregroundColor(PodcastColors.primary)
+            }
+            .padding(.bottom, 8)
+        }
+        .listStyle(.grouped)
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle(podcast.title)
+        
     }
     
     private func loadBackgroundColor() {

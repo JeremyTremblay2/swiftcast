@@ -22,18 +22,19 @@ struct PodcastListView: View {
                .navigationTitle("Podcasts")
                .padding(.horizontal, 20)
            }
-           
            .toolbar {
                Button(action: {}) {
                    Image(systemName: "ellipsis")
                        .resizable()
                        .scaledToFit()
                        .frame(width: 20, height: 20)
+                       .foregroundColor(PodcastColors.primary)
                }
                .padding(.trailing, 8)
-               .background(Color.green)
+               .background(PodcastColors.backgroundSecondary)
                .clipShape(Circle())
            }
+           .navigationTitle("Podcasts")
        }
     }
 }
