@@ -15,8 +15,10 @@ struct PodcastItemThumbnail: View {
                     .font(.headline)
                     .lineLimit(1)
                     .padding(.bottom, 4)
+                    .foregroundColor(PodcastColors.foregroundPrimary)
                 Text("Mise à jour : \(formatDate(date: podcast.updateDate, formatter: generateStandardDateFormatter(date: podcast.updateDate)))")
                     .font(.body)
+                    .foregroundColor(PodcastColors.foregroundSecondary)
             }
             .aspectRatio(contentMode: .fit)
         }

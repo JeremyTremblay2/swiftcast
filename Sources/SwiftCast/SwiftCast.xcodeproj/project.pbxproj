@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC1025F02A1911FC0006568E /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1025EF2A1911FC0006568E /* ColorExtensions.swift */; };
 		EC17DC092A179A2800FCCC59 /* PublicationFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC17DC082A179A2800FCCC59 /* PublicationFrequency.swift */; };
 		EC17DC0B2A17A37D00FCCC59 /* MenuSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC17DC0A2A17A37D00FCCC59 /* MenuSection.swift */; };
 		EC3C61E12A17C92F00029665 /* EpisodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C61E02A17C92F00029665 /* EpisodeView.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC1025EF2A1911FC0006568E /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		EC17DC082A179A2800FCCC59 /* PublicationFrequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicationFrequency.swift; sourceTree = "<group>"; };
 		EC17DC0A2A17A37D00FCCC59 /* MenuSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSection.swift; sourceTree = "<group>"; };
 		EC3C61E02A17C92F00029665 /* EpisodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeView.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				EC3C61E32A17CE3900029665 /* CalendarExtensions.swift */,
 				EC3C61E52A17DDCC00029665 /* DurationExtensions.swift */,
 				EC3C61EC2A17F90100029665 /* UIImageExtensions.swift */,
+				EC1025EF2A1911FC0006568E /* ColorExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				EC3C61ED2A17F90100029665 /* UIImageExtensions.swift in Sources */,
 				EC3C61E62A17DDCC00029665 /* DurationExtensions.swift in Sources */,
 				EC3C61EB2A17F13C00029665 /* PodcastCoverView.swift in Sources */,
+				EC1025F02A1911FC0006568E /* ColorExtensions.swift in Sources */,
 				ECED09352A15213400F94EB1 /* Stub.swift in Sources */,
 				ECED09332A151ED300F94EB1 /* Episode.swift in Sources */,
 				ECE326DB2A18F1C500082BB1 /* PodcastColors.swift in Sources */,

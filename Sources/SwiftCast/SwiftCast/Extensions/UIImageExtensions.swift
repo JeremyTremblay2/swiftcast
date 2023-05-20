@@ -1,4 +1,5 @@
 import UIKit
+import SwiftUI
 
 public extension UIImage {
     var averageColor: UIColor? {
@@ -31,5 +32,24 @@ public extension UIImage {
                        green: CGFloat(bitmap[1]) / 255,
                        blue: CGFloat(bitmap[2]) / 255,
                        alpha: CGFloat(bitmap[3]) / 255)
+    }
+    
+    func rgb() -> Int? {
+        var fRed : CGFloat = 0
+        var fGreen : CGFloat = 0
+        var fBlue : CGFloat = 0
+        var fAlpha: CGFloat = 0
+        if ((self.averageColor?.getRed(&fRed, green: &fGreen, blue: &fBlue, alpha: &fAlpha)) != nil) {
+            let iRed = Int(fRed * 255.0)
+            let iGreen = Int(fGreen * 255.0)
+            let iBlue = Int(fBlue * 255.0)
+            let iAlpha = Int(fAlpha * 255.0)
+
+            let rgb = (iAlpha << 24) + (iRed << 16) + (iGreen << 8) + iBlue
+            return rgb
+        }
+        else {
+            return nil
+        }
     }
 }

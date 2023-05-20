@@ -8,7 +8,7 @@ struct CurrentEpisodePlayingView : View {
     var body: some View {
         ZStack {
             Rectangle()
-                .foregroundColor(Color.black.opacity(0.2))
+                .foregroundColor(PodcastColors.backgroundTertiary.opacity(0.4))
                 .frame(width: UIScreen.main.bounds.size.width, height: 65)
             HStack(spacing: 0) {
                 Button(action: {}) {
@@ -23,11 +23,13 @@ struct CurrentEpisodePlayingView : View {
                             
                         VStack(alignment: .leading, spacing: 0) {
                             Text("\(podcastName) \(episode.title)")
-                                .font(.headline)
+                                .font(.body)
                                 .padding(.bottom, 3)
                                 .lineLimit(1)
                                 .fixedSize(horizontal: false, vertical: true)
+                                .foregroundColor(PodcastColors.foregroundPrimary)
                             Text(formatDate(date: episode.date, formatter: generateLongDateFormatter()))
+                                .foregroundColor(PodcastColors.foregroundSecondary)
                         }
                         .padding(.leading, 14)
                         Spacer()
@@ -41,6 +43,7 @@ struct CurrentEpisodePlayingView : View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 20, height: 20)
                         .font(.title3)
+                        .foregroundColor(PodcastColors.foregroundPrimary)
                 }
                 .buttonStyle(PlainButtonStyle())
                 .padding(.trailing, 16)
@@ -50,6 +53,7 @@ struct CurrentEpisodePlayingView : View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 30, height: 30)
+                        .foregroundColor(PodcastColors.foregroundPrimary)
                 }
                 .buttonStyle(PlainButtonStyle())
                 .padding(.trailing, 20)

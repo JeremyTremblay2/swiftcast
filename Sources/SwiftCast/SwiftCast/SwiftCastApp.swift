@@ -11,9 +11,11 @@ import SwiftUI
 struct SwiftCastApp: App {
     var body: some Scene {
         var stub = Stub()
-        
+        let podcasts = stub.loadPodcasts()
         WindowGroup {
-            PodcastListView(podcasts: stub.loadPodcasts())
+            //PodcastListView(podcasts: stub.loadPodcasts())
+            PodcastCoverView(podcast: podcasts[0], paddingLeading: 20, paddingTrailing: 20, backgroundColor: Color.white)
+                .preferredColorScheme(.dark)
         }
     }
 }

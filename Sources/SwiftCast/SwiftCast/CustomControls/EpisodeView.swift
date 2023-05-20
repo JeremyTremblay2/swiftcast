@@ -10,6 +10,7 @@ struct EpisodeView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text(formatDate(date: episode.date, formatter: generateStandardDateFormatter(date: episode.date)))
+                .foregroundColor(PodcastColors.foregroundSecondary)
                 .font(.caption)
                 .bold()
                 .textCase(.uppercase)
@@ -19,22 +20,25 @@ struct EpisodeView: View {
             if episode.isPlayed {
                 Text(episode.title)
                     .font(.title2)
+                    .foregroundColor(PodcastColors.foregroundPrimary)
             } else {
                 Text(episode.title)
                     .font(.title3)
+                    .foregroundColor(PodcastColors.foregroundPrimary)
                     .bold()
             }
             
             Text(episode.script)
                 .padding(.top, 6)
                 .font(.callout)
+                .foregroundColor(PodcastColors.foregroundSecondary)
             
             HStack(spacing: 0) {
                 Button(action: {}) {
                     Image(systemName: "play.fill")
                         .frame(width: 33, height: 33)
-                        .foregroundColor(Color.purple)
-                        .background(Color.primary)
+                        .foregroundColor(PodcastColors.primary)
+                        .background(PodcastColors.backgroundTertiary)
                         .clipShape(Circle())
                 }
                 .padding(.leading, 2)
@@ -44,17 +48,20 @@ struct EpisodeView: View {
                 if episode.isPlayed {
                     ProgressView(value: 0.1)
                         .frame(width: 80)
+                        .background(PodcastColors.backgroundTertiary)
+                        .tint(PodcastColors.primary)
                     Text("Il reste \(episode.duration.formattedHoursAndMinutes())")
-                        .foregroundColor(Color.accentColor)
+                        .foregroundColor(PodcastColors.primary)
                         .padding(.leading, 12)
                 } else {
                     Text("\(episode.duration.formattedHoursAndMinutes())")
-                        .foregroundColor(Color.accentColor)
+                        .foregroundColor(PodcastColors.primary)
                 }
                 
                 Spacer()
                 Image(systemName: "ellipsis")
                     .padding(.trailing, 2)
+                    .foregroundColor(PodcastColors.foregroundSecondary)
                 
             }
             .padding(.top, 10)

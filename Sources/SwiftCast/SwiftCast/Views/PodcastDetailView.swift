@@ -47,7 +47,7 @@ struct PodCastDetailView_Previews: PreviewProvider {
         let podcasts = stub.loadPodcasts()
         Group {
             PodCastDetailView(podcast: podcasts[0])
-            PodCastDetailView(podcast: podcasts[0]).preferredColorScheme(.dark)
+            PodCastDetailView(podcast: podcasts[2]).preferredColorScheme(.dark)
         }
     }
 }

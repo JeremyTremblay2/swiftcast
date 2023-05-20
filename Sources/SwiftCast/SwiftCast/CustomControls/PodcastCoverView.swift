@@ -5,7 +5,18 @@ struct PodcastCoverView: View {
     
     var paddingLeading: CGFloat
     var paddingTrailing: CGFloat
-    var backgroundColor: Color = .clear
+    public var backgroundColor: Color
+    
+    private var colorScheme: ColorScheme
+    
+    init(podcast: Podcast, paddingLeading: CGFloat, paddingTrailing: CGFloat, backgroundColor: Color) {
+        colorScheme = .light
+        self.podcast = podcast
+        self.paddingLeading = paddingLeading
+        self.paddingTrailing = paddingTrailing
+        self.backgroundColor = backgroundColor
+        colorScheme = backgroundColor.getBestColorScheme()
+    }
     
     private var plusButton: some View {
         HStack(alignment: .bottom, spacing: 0) {
@@ -19,11 +30,13 @@ struct PodcastCoverView: View {
             Button(action: {}) {
                 Text("PLUS")
                     .font(.callout)
+                    .foregroundColor(PodcastColors.foregroundPrimary)
+                    .environment(\.colorScheme, colorScheme)
             }
             .padding(.leading, 10)
             .background(backgroundColor)
         }
-        .padding(.bottom, 12)
+        .padding(.bottom, 9)
     }
     
     var body: some View {
@@ -48,12 +61,15 @@ struct PodcastCoverView: View {
                         .bold()
                         .padding(.top, 14)
                         .padding(.bottom, 6)
+                        .foregroundColor(PodcastColors.foregroundPrimary)
+                        .environment(\.colorScheme, self.colorScheme)
                     
                     Label("\(podcast.author) >", systemImage: "tv")
                         .font(.body)
-                        .foregroundColor(.gray)
                         .font(.system(size: 12))
                         .padding(.bottom, 20)
+                        .foregroundColor(PodcastColors.foregroundPrimary)
+                        .environment(\.colorScheme, self.colorScheme)
                     
                     //GeometryReader { geo in
                     VStack(alignment: .center, spacing: 0) {
@@ -63,9 +79,15 @@ struct PodcastCoverView: View {
                                 .padding(7)
                             //.frame(width: geo.size.width * 0.65)
                                 .padding(.horizontal, 50)
+                                .foregroundColor(PodcastColors.foregroundPrimary)
+                                .environment(\.colorScheme, colorScheme  == .dark ? .light : .dark)
                         }
-                        .buttonStyle(.bordered)
+                        .buttonStyle(.automatic)
                         .tint(.black)
+                        .padding(.vertical, 10)
+                        .padding(.horizontal, 10)
+                        .background(PodcastColors.backgroundPrimary.opacity(0.8))
+                        .environment(\.colorScheme, colorScheme  == .dark ? .light : .dark)
                         .cornerRadius(12)
                         
                         ZStack {
@@ -74,6 +96,8 @@ struct PodcastCoverView: View {
                                 .padding(.top, 16)
                                 .padding(.bottom, 10)
                                 .overlay(plusButton, alignment: .bottomTrailing)
+                                .foregroundColor(PodcastColors.foregroundPrimary)
+                                .environment(\.colorScheme, colorScheme)
                         }
                         
                         HStack(alignment: .center, spacing: 0) {
@@ -82,8 +106,13 @@ struct PodcastCoverView: View {
                                 .scaledToFit()
                                 .frame(width: 14)
                                 .padding(.trailing, 4)
+                                .foregroundColor(PodcastColors.foregroundPrimary)
+                                .environment(\.colorScheme, colorScheme)
                             Text("**\(podcast.rating, specifier: "%.1f")** (\(podcast.numberOfReviews))・\(podcast.category)・Chaque semaine")
                                 .font(.subheadline)
+                                .foregroundColor(PodcastColors.foregroundPrimary)
+                                .environment(\.colorScheme, colorScheme)
+                                .lineLimit(1)
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                     }
@@ -104,8 +133,8 @@ struct PodcastCoverView_Previews: PreviewProvider {
         var stub = Stub()
         let podcasts = stub.loadPodcasts()
         Group {
-            PodcastCoverView(podcast: podcasts[0], paddingLeading: 20, paddingTrailing: 20, backgroundColor: Color.red)
-            PodcastCoverView(podcast: podcasts[0], paddingLeading: 20, paddingTrailing: 20)
+            PodcastCoverView(podcast: podcasts[0], paddingLeading: 20, paddingTrailing: 20, backgroundColor: Color.indigo)
+            PodcastCoverView(podcast: podcasts[0], paddingLeading: 20, paddingTrailing: 20, backgroundColor: Color.indigo)
                 .preferredColorScheme(.dark)
         }
     }

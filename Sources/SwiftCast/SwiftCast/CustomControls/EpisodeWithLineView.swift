@@ -11,7 +11,7 @@ struct EpisodeWithLineView: View {
         VStack(alignment: .leading, spacing: 0) {
             Divider()
                 .frame(height: 1)
-                .overlay(.gray)
+                .overlay(PodcastColors.backgroundTertiary)
                 .padding(.bottom, 24)
             EpisodeView(episode: episode, paddingLeading: 0, paddingTrailing: paddingTrailing)
         }
