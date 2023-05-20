@@ -3,6 +3,9 @@ import SwiftUI
 struct PodcastCoverView: View {
     var podcast: Podcast
     
+    var paddingLeading: CGFloat
+    var paddingTrailing: CGFloat
+    
     @State private var backgroundColor: Color = .clear
     
     private var plusButton: some View {
@@ -16,7 +19,7 @@ struct PodcastCoverView: View {
             
             Button(action: {}) {
                 Text("PLUS")
-                    .font(.headline)
+                    .font(.callout)
             }
             .padding(.leading, 10)
             .background(backgroundColor)
@@ -25,75 +28,84 @@ struct PodcastCoverView: View {
     }
     
     var body: some View {
-        VStack(spacing: 0) {
-            //GeometryReader { geo in
+        ZStack {
+            backgroundColor
+                .ignoresSafeArea()
             VStack(spacing: 0) {
-                Image(podcast.imageName)
-                    .resizable()
-                    .scaledToFit()
-                    .clipped()
-                    .cornerRadius(7)
-                    .shadow(color: .black.opacity(0.4), radius: 8)
-                    /*.frame(width: geo.size.width * 0.55, height: geo.size.width * 0.55)
-                    .frame(width: geo.size.width)*/
-                    .padding(.horizontal, 80)
-                
-                Text(podcast.title)
-                    .font(.title2)
-                    .bold()
-                    .padding(.top, 14)
-                    .padding(.bottom, 6)
-                
-                Label("\(podcast.author) >", systemImage: "tv")
-                    .font(.body)
-                    .foregroundColor(.gray)
-                    .font(.system(size: 12))
-                    .padding(.bottom, 20)
-                
                 //GeometryReader { geo in
-                VStack(alignment: .center, spacing: 0) {
-                    Button(action: {}) {
-                        Label("Dernier épisode", systemImage: "play.fill")
-                            .bold()
-                            .padding(7)
+                VStack(spacing: 0) {
+                    Image(podcast.imageName)
+                        .resizable()
+                        .scaledToFit()
+                        .clipped()
+                        .cornerRadius(7)
+                        .shadow(color: .black.opacity(0.4), radius: 8)
+                    /*.frame(width: geo.size.width * 0.55, height: geo.size.width * 0.55)
+                     .frame(width: geo.size.width)*/
+                        .padding(.horizontal, 70)
+                    
+                    Text(podcast.title)
+                        .font(.title2)
+                        .bold()
+                        .padding(.top, 14)
+                        .padding(.bottom, 6)
+                    
+                    Label("\(podcast.author) >", systemImage: "tv")
+                        .font(.body)
+                        .foregroundColor(.gray)
+                        .font(.system(size: 12))
+                        .padding(.bottom, 20)
+                    
+                    //GeometryReader { geo in
+                    VStack(alignment: .center, spacing: 0) {
+                        Button(action: {}) {
+                            Label("Dernier épisode", systemImage: "play.fill")
+                                .bold()
+                                .padding(7)
                             //.frame(width: geo.size.width * 0.65)
-                            .padding(.horizontal, 50)
+                                .padding(.horizontal, 50)
+                        }
+                        .buttonStyle(.bordered)
+                        .tint(.black)
+                        .cornerRadius(12)
+                        
+                        
+                        ZStack {
+                            Text("**\(formatDate(date: podcast.episodes.first!.date, formatter: generateShortDateFormatter(date: podcast.episodes.first!.date))): \(podcast.episodes.first?.title ?? "")**: \(podcast.episodes.first?.script ?? "")")
+                                .lineLimit(3)
+                                .padding(.top, 16)
+                                .padding(.bottom, 10)
+                                .overlay(plusButton, alignment: .bottomTrailing)
+                        }
+                        
+                        
+                        HStack(alignment: .center, spacing: 0) {
+                            Image(systemName: "star.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 14)
+                                .padding(.trailing, 4)
+                            Text("**\(podcast.rating, specifier: "%.1f")** (\(podcast.numberOfReviews))・\(podcast.category)・Chaque semaine")
+                                .font(.subheadline)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     }
-                    .buttonStyle(.bordered)
-                    .tint(.black)
-                    .cornerRadius(12)
+                    //}
+                    //}
                     
-                    
-                    ZStack {
-                        Text("**\(formatDate(date: podcast.episodes.first!.date, formatter: generateShortDateFormatter(date: podcast.episodes.first!.date))): \(podcast.episodes.first?.title ?? "")**: \(podcast.episodes.first?.script ?? "")")
-                            .lineLimit(3)
-                            .padding(.top, 16)
-                            .padding(.bottom, 12)
-                            .overlay(plusButton, alignment: .bottomTrailing)
-                    }
-                    
-                    
-                    HStack(alignment: .center, spacing: 0) {
-                        Image(systemName: "star.fill")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 14)
-                            .padding(.trailing, 4)
-                        Text("**\(podcast.rating, specifier: "%.1f")** (\(podcast.numberOfReviews))・\(podcast.category)・Chaque semaine")
-                            .font(.subheadline)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
                 }
-                //}
-                //}
-                
+            }
+            .padding(.bottom, 22)
+            .padding(.leading, paddingLeading)
+            .padding(.trailing, paddingTrailing)
+            .ignoresSafeArea()
+            .background(backgroundColor)
+            .onAppear {
+                loadBackgroundColor()
             }
             
         }
-        .background(backgroundColor)
-        .onAppear {
-            loadBackgroundColor()
-        }
+        
     }
     
     private func loadBackgroundColor() {
@@ -107,8 +119,8 @@ struct PodcastCoverView_Previews: PreviewProvider {
         var stub = Stub()
         let podcasts = stub.loadPodcasts()
         Group {
-            PodcastCoverView(podcast: podcasts[0])
-            PodcastCoverView(podcast: podcasts[0])
+            PodcastCoverView(podcast: podcasts[0], paddingLeading: 20, paddingTrailing: 20)
+            PodcastCoverView(podcast: podcasts[0], paddingLeading: 20, paddingTrailing: 20)
                 .preferredColorScheme(.dark)
         }
     }

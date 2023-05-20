@@ -4,6 +4,9 @@ import SwiftUI
 struct EpisodeView: View {
     var episode: Episode
     
+    var paddingLeading: CGFloat
+    var paddingTrailing: CGFloat
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text(formatDate(date: episode.date, formatter: generateStandardDateFormatter(date: episode.date)))
@@ -56,7 +59,8 @@ struct EpisodeView: View {
             }
             .padding(.top, 10)
         }
-        .frame(width: UIScreen.main.bounds.width, height: 200)
+        .padding(.leading, paddingLeading)
+        .padding(.trailing, paddingTrailing)
     }
 }
 
@@ -64,8 +68,8 @@ struct EpisodeView_Previews: PreviewProvider {
     static var previews: some View {
         var stub = Stub()
         Group {
-            EpisodeView(episode: stub.loadPodcasts()[0].episodes[0])
-            EpisodeView(episode: stub.loadPodcasts()[0].episodes[0])
+            EpisodeView(episode: stub.loadPodcasts()[0].episodes[0], paddingLeading: 20, paddingTrailing: 20)
+            EpisodeView(episode: stub.loadPodcasts()[0].episodes[0], paddingLeading: 20, paddingTrailing: 20)
                 .preferredColorScheme(.dark)
         }
     }

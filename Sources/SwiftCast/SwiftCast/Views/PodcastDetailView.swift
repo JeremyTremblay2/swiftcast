@@ -10,11 +10,17 @@ import SwiftUI
 struct PodCastDetailView: View {
     var podcast: Podcast
     
+    var paddingLeading: CGFloat = 20
+    var paddingTrailing: CGFloat = 20
+    
     var body: some View {
         ScrollView {
-            PodcastCoverView(podcast: podcast)
+            PodcastCoverView(podcast: podcast, paddingLeading: paddingLeading, paddingTrailing: paddingTrailing)
+            FilteringEpisodesView(paddingLeading: paddingLeading, paddingTrailing: paddingTrailing)
+            ForEach (podcast.episodes) { episode in
+                EpisodeWithLineView(episode: episode, paddingLeading: paddingLeading, paddingTrailing: paddingTrailing)
+            }
         }
-        .padding(16)
     }
 }
 

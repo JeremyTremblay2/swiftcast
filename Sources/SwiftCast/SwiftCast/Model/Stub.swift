@@ -27,7 +27,7 @@ struct Stub {
                                 withDuration: generateDuration(withHours: 0, withMinutes: 46, withSeconds: 25)),
                         Episode(withDate: generateDate(fromYear: 2023, fromMonth: 4, fromDay: 25),
                                 withTitle: "4. Faut-il arrêter de prendre l'avion ?",
-                                withDescription: "**** Recevez gratuitement tous les mardis l'infolettre Chaleur humaine en vous inscrivant ici... \nLe secteur aérien pèse nviron 2,5% des...",
+                                withDescription: "**** Recevez gratuitement tous les mardis l'infolettre Chaleur humaine en vous inscrivant là\nLe secteur aérien pèse environ 2,5% des...",
                                 withDuration: generateDuration(withHours: 0, withMinutes: 45, withSeconds: 34)),
                         Episode(withDate: generateDate(fromYear: 2023, fromMonth: 4, fromDay: 25),
                                 withTitle: "3. La Chine peut-elle réussir sa transition climatique ?",
