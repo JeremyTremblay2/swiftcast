@@ -5,8 +5,7 @@ struct PodcastCoverView: View {
     
     var paddingLeading: CGFloat
     var paddingTrailing: CGFloat
-    
-    @State private var backgroundColor: Color = .clear
+    var backgroundColor: Color = .clear
     
     private var plusButton: some View {
         HStack(alignment: .bottom, spacing: 0) {
@@ -69,7 +68,6 @@ struct PodcastCoverView: View {
                         .tint(.black)
                         .cornerRadius(12)
                         
-                        
                         ZStack {
                             Text("**\(formatDate(date: podcast.episodes.first!.date, formatter: generateShortDateFormatter(date: podcast.episodes.first!.date))): \(podcast.episodes.first?.title ?? "")**: \(podcast.episodes.first?.script ?? "")")
                                 .lineLimit(3)
@@ -77,7 +75,6 @@ struct PodcastCoverView: View {
                                 .padding(.bottom, 10)
                                 .overlay(plusButton, alignment: .bottomTrailing)
                         }
-                        
                         
                         HStack(alignment: .center, spacing: 0) {
                             Image(systemName: "star.fill")
@@ -92,25 +89,13 @@ struct PodcastCoverView: View {
                     }
                     //}
                     //}
-                    
                 }
             }
             .padding(.bottom, 22)
             .padding(.leading, paddingLeading)
             .padding(.trailing, paddingTrailing)
-            .ignoresSafeArea()
             .background(backgroundColor)
-            .onAppear {
-                loadBackgroundColor()
-            }
-            
         }
-        
-    }
-    
-    private func loadBackgroundColor() {
-        let uiColor = UIImage(named: podcast.imageName)?.averageColor ?? .clear
-        backgroundColor = Color(uiColor)
     }
 }
 
@@ -119,7 +104,7 @@ struct PodcastCoverView_Previews: PreviewProvider {
         var stub = Stub()
         let podcasts = stub.loadPodcasts()
         Group {
-            PodcastCoverView(podcast: podcasts[0], paddingLeading: 20, paddingTrailing: 20)
+            PodcastCoverView(podcast: podcasts[0], paddingLeading: 20, paddingTrailing: 20, backgroundColor: Color.red)
             PodcastCoverView(podcast: podcasts[0], paddingLeading: 20, paddingTrailing: 20)
                 .preferredColorScheme(.dark)
         }

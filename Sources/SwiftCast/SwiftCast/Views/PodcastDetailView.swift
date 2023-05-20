@@ -13,14 +13,31 @@ struct PodCastDetailView: View {
     var paddingLeading: CGFloat = 20
     var paddingTrailing: CGFloat = 20
     
+    @State private var backgroundColor: Color = .clear
+    
     var body: some View {
         ScrollView {
-            PodcastCoverView(podcast: podcast, paddingLeading: paddingLeading, paddingTrailing: paddingTrailing)
-            FilteringEpisodesView(paddingLeading: paddingLeading, paddingTrailing: paddingTrailing)
-            ForEach (podcast.episodes) { episode in
-                EpisodeWithLineView(episode: episode, paddingLeading: paddingLeading, paddingTrailing: paddingTrailing)
+            ZStack {
+                backgroundColor
+                    .ignoresSafeArea()
+                PodcastCoverView(podcast: podcast, paddingLeading: paddingLeading, paddingTrailing: paddingTrailing, backgroundColor: backgroundColor)
+                
+            }
+            VStack {
+                FilteringEpisodesView(paddingLeading: paddingLeading, paddingTrailing: paddingTrailing)
+                ForEach (podcast.episodes) { episode in
+                    EpisodeWithLineView(episode: episode, paddingLeading: paddingLeading, paddingTrailing: paddingTrailing)
+                }
             }
         }
+        .onAppear {
+            loadBackgroundColor()
+        }
+    }
+    
+    private func loadBackgroundColor() {
+        let uiColor = UIImage(named: podcast.imageName)?.averageColor ?? .clear
+        backgroundColor = Color(uiColor)
     }
 }
 

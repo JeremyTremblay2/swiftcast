@@ -20,6 +20,7 @@
 		ECE326D42A18C38700082BB1 /* PodcastListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE326D32A18C38700082BB1 /* PodcastListView.swift */; };
 		ECE326D62A18D9B600082BB1 /* EpisodeWithLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE326D52A18D9B600082BB1 /* EpisodeWithLineView.swift */; };
 		ECE326D82A18E3A100082BB1 /* FilteringEpisodesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE326D72A18E3A100082BB1 /* FilteringEpisodesView.swift */; };
+		ECE326DB2A18F1C500082BB1 /* PodcastColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE326DA2A18F1C500082BB1 /* PodcastColors.swift */; };
 		ECED09062A15150300F94EB1 /* SwiftCastApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECED09052A15150300F94EB1 /* SwiftCastApp.swift */; };
 		ECED09082A15150300F94EB1 /* PodcastDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECED09072A15150300F94EB1 /* PodcastDetailView.swift */; };
 		ECED090A2A15150400F94EB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECED09092A15150400F94EB1 /* Assets.xcassets */; };
@@ -63,6 +64,7 @@
 		ECE326D32A18C38700082BB1 /* PodcastListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListView.swift; sourceTree = "<group>"; };
 		ECE326D52A18D9B600082BB1 /* EpisodeWithLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeWithLineView.swift; sourceTree = "<group>"; };
 		ECE326D72A18E3A100082BB1 /* FilteringEpisodesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteringEpisodesView.swift; sourceTree = "<group>"; };
+		ECE326DA2A18F1C500082BB1 /* PodcastColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastColors.swift; sourceTree = "<group>"; };
 		ECED09022A15150300F94EB1 /* SwiftCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECED09052A15150300F94EB1 /* SwiftCastApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCastApp.swift; sourceTree = "<group>"; };
 		ECED09072A15150300F94EB1 /* PodcastDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastDetailView.swift; sourceTree = "<group>"; };
@@ -117,13 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				ECED09072A15150300F94EB1 /* PodcastDetailView.swift */,
-				EC3C61E02A17C92F00029665 /* EpisodeView.swift */,
-				EC3C61E82A17E74800029665 /* CurrentEpisodePlayingView.swift */,
-				EC3C61EA2A17F13C00029665 /* PodcastCoverView.swift */,
-				EC3C61EE2A1836E500029665 /* PodcastItemThumbnail.swift */,
 				ECE326D32A18C38700082BB1 /* PodcastListView.swift */,
-				ECE326D52A18D9B600082BB1 /* EpisodeWithLineView.swift */,
-				ECE326D72A18E3A100082BB1 /* FilteringEpisodesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -134,6 +130,27 @@
 				EC3C61F12A18378500029665 /* Utils.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		ECE326D92A18F19A00082BB1 /* CustomControls */ = {
+			isa = PBXGroup;
+			children = (
+				EC3C61E02A17C92F00029665 /* EpisodeView.swift */,
+				EC3C61E82A17E74800029665 /* CurrentEpisodePlayingView.swift */,
+				EC3C61EA2A17F13C00029665 /* PodcastCoverView.swift */,
+				EC3C61EE2A1836E500029665 /* PodcastItemThumbnail.swift */,
+				ECE326D52A18D9B600082BB1 /* EpisodeWithLineView.swift */,
+				ECE326D72A18E3A100082BB1 /* FilteringEpisodesView.swift */,
+			);
+			path = CustomControls;
+			sourceTree = "<group>";
+		};
+		ECE326DC2A18F1CD00082BB1 /* Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				ECE326DA2A18F1C500082BB1 /* PodcastColors.swift */,
+			);
+			path = Catalog;
 			sourceTree = "<group>";
 		};
 		ECED08F92A15150300F94EB1 = {
@@ -159,6 +176,8 @@
 		ECED09042A15150300F94EB1 /* SwiftCast */ = {
 			isa = PBXGroup;
 			children = (
+				ECE326DC2A18F1CD00082BB1 /* Catalog */,
+				ECE326D92A18F19A00082BB1 /* CustomControls */,
 				EC3C61F02A18377900029665 /* Utils */,
 				EC3C61E72A17E50A00029665 /* Views */,
 				EC3C61E22A17CE2700029665 /* Extensions */,
@@ -350,6 +369,7 @@
 				EC3C61EB2A17F13C00029665 /* PodcastCoverView.swift in Sources */,
 				ECED09352A15213400F94EB1 /* Stub.swift in Sources */,
 				ECED09332A151ED300F94EB1 /* Episode.swift in Sources */,
+				ECE326DB2A18F1C500082BB1 /* PodcastColors.swift in Sources */,
 				EC3C61EF2A1836E500029665 /* PodcastItemThumbnail.swift in Sources */,
 				ECED09062A15150300F94EB1 /* SwiftCastApp.swift in Sources */,
 				ECE326D82A18E3A100082BB1 /* FilteringEpisodesView.swift in Sources */,
