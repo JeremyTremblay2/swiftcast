@@ -3,14 +3,11 @@ import SwiftUI
 struct PodcastItemThumbnail: View {
     var podcast: Podcast
     
-    var width: CGFloat
-    var height: CGFloat
-    
     var body: some View {
         VStack(alignment: .leading) {
             Image(podcast.imageName)
                 .resizable()
-                .aspectRatio(contentMode: .fill)
+                .aspectRatio(contentMode: .fit)
                 .cornerRadius(7)
             
             VStack(alignment: .leading, spacing: 0) {
@@ -23,7 +20,6 @@ struct PodcastItemThumbnail: View {
             }
             .aspectRatio(contentMode: .fit)
         }
-        .frame(width: width, height: height)
     }
 }
 
@@ -33,8 +29,9 @@ struct PodcastItemThumbnail_Previews: PreviewProvider {
         let podcasts = stub.loadPodcasts()
         
         Group {
-            PodcastItemThumbnail(podcast: podcasts[4], width: 200, height: 200)
-            PodcastItemThumbnail(podcast: podcasts[4], width: 200, height: 200).preferredColorScheme(.dark)
+            PodcastItemThumbnail(podcast: podcasts[4])
+            PodcastItemThumbnail(podcast: podcasts[4])
+                .preferredColorScheme(.dark)
         }
     }
 }

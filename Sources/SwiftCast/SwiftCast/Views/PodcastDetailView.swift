@@ -13,7 +13,6 @@ struct PodCastDetailView: View {
     var body: some View {
         ScrollView {
             PodcastCoverView(podcast: podcast)
-            PodcastCoverView(podcast: podcast)
         }
         .padding(16)
     }
@@ -24,6 +23,7 @@ struct PodCastDetailView_Previews: PreviewProvider {
         var stub = Stub()
         let podcasts = stub.loadPodcasts()
         Group {
+            PodCastDetailView(podcast: podcasts[0])
             PodCastDetailView(podcast: podcasts[0]).preferredColorScheme(.dark)
         }
     }

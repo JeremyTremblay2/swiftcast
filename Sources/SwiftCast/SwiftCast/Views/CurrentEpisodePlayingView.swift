@@ -62,6 +62,10 @@ struct CurrentEpisodePlayingView_Previews: PreviewProvider {
     static var previews: some View {
         var stub = Stub()
         let podcast = stub.loadPodcasts()[4]
-        CurrentEpisodePlayingView(podcastImageName: podcast.imageName, podcastName: podcast.title, episode: podcast.episodes[0])
+        Group {
+            CurrentEpisodePlayingView(podcastImageName: podcast.imageName, podcastName: podcast.title, episode: podcast.episodes[0])
+            CurrentEpisodePlayingView(podcastImageName: podcast.imageName, podcastName: podcast.title, episode: podcast.episodes[0])
+                .preferredColorScheme(.dark)
+        }
     }
 }

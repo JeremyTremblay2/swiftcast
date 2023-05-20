@@ -106,6 +106,10 @@ struct PodcastCoverView_Previews: PreviewProvider {
     static var previews: some View {
         var stub = Stub()
         let podcasts = stub.loadPodcasts()
-        PodcastCoverView(podcast: podcasts[0])
+        Group {
+            PodcastCoverView(podcast: podcasts[0])
+            PodcastCoverView(podcast: podcasts[0])
+                .preferredColorScheme(.dark)
+        }
     }
 }

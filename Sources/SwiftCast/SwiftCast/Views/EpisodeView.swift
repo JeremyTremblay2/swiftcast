@@ -56,7 +56,6 @@ struct EpisodeView: View {
             }
             .padding(.top, 10)
         }
-        .padding()
         .frame(width: UIScreen.main.bounds.width, height: 200)
     }
 }
@@ -64,6 +63,10 @@ struct EpisodeView: View {
 struct EpisodeView_Previews: PreviewProvider {
     static var previews: some View {
         var stub = Stub()
-        EpisodeView(episode: stub.loadPodcasts()[0].episodes[0])
+        Group {
+            EpisodeView(episode: stub.loadPodcasts()[0].episodes[0])
+            EpisodeView(episode: stub.loadPodcasts()[0].episodes[0])
+                .preferredColorScheme(.dark)
+        }
     }
 }
