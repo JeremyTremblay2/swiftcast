@@ -1,24 +1,13 @@
-
-
-# SwiftCast
-
-Welcome on the SwiftCast project!  
-
-The goal of this project is to realize a similar application to the famous Podcast app available on iOS using SwiftUI.  
-
-_Generated with a_ **Code#0** _template_  
-<img src="Documentation/doc_images/CodeFirst.png" height=40/>   
-
 <h1 align="center">🎙️ SwiftCast 🎙️</h1>
 
 The goal of SwiftCast is to propose an iOS mobile application very similar to the Apple Podcast application.
 
 ## ✔️ Features
 
-- [ ] Browse podcasts sorted by the last update date.
-- [ ] See the detail for each podcast (image, title, author, rating, reviews, episodes...)
-- [ ] Visuals identical to the originals !
-- [ ] Support for various themes (light / dark) and responsive screen.
+- [x] Browse podcasts sorted by the last update date.
+- [x] See the detail for each podcast (image, title, author, rating, reviews, episodes...)
+- [x] Visuals identical to the originals !
+- [x] Support for various themes (light / dark) and responsive screen.
 
 ## 📱 Application
 
