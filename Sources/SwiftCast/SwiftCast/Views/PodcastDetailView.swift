@@ -20,8 +20,6 @@ struct PodcastDetailView: View {
     @State private var showBackButton: Bool = false
     @State private var offset = CGFloat.zero
     
-    private var colorScheme: ColorScheme = .light
-    
     private var navigationBarColor: Color {
         return showBackButton ? .clear : backgroundColor
     }
@@ -29,9 +27,7 @@ struct PodcastDetailView: View {
     init(podcast: Podcast, paddingBottom: CGFloat = 0) {
         self.podcast = podcast
         self.paddingBottom = paddingBottom
-        let appearance = UINavigationBarAppearance()
         loadBackgroundColor()
-        colorScheme = backgroundColor.getBestColorScheme()
     }
     
     var body: some View {
@@ -81,7 +77,6 @@ struct PodcastDetailView: View {
                         Text(podcast.title)
                             .font(.title3)
                             .foregroundColor(PodcastColors.foregroundPrimary)
-                            .environment(\.colorScheme, colorScheme)
                     }
                 }
             }
