@@ -20,8 +20,11 @@
 		EC3C61E92A17E74800029665 /* CurrentEpisodePlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C61E82A17E74800029665 /* CurrentEpisodePlayingView.swift */; };
 		EC3C61EB2A17F13C00029665 /* PodcastCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C61EA2A17F13C00029665 /* PodcastCoverView.swift */; };
 		EC3C61ED2A17F90100029665 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C61EC2A17F90100029665 /* UIImageExtensions.swift */; };
-		EC3C61EF2A1836E500029665 /* PodcastItemThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C61EE2A1836E500029665 /* PodcastItemThumbnail.swift */; };
+		EC3C61EF2A1836E500029665 /* PodcastItemThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C61EE2A1836E500029665 /* PodcastItemThumbnailView.swift */; };
 		EC3C61F22A18378500029665 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C61F12A18378500029665 /* Utils.swift */; };
+		EC562E7F2A1A0EB400880399 /* DownloadButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC562E7E2A1A0EB400880399 /* DownloadButtonView.swift */; };
+		EC562E812A1A0FC600880399 /* BackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC562E802A1A0FC600880399 /* BackButtonView.swift */; };
+		EC562E862A1A115700880399 /* EllipsisButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC562E852A1A115700880399 /* EllipsisButtonView.swift */; };
 		ECE326D42A18C38700082BB1 /* PodcastListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE326D32A18C38700082BB1 /* PodcastListView.swift */; };
 		ECE326D62A18D9B600082BB1 /* EpisodeWithLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE326D52A18D9B600082BB1 /* EpisodeWithLineView.swift */; };
 		ECE326D82A18E3A100082BB1 /* FilteringEpisodesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE326D72A18E3A100082BB1 /* FilteringEpisodesView.swift */; };
@@ -69,8 +72,11 @@
 		EC3C61E82A17E74800029665 /* CurrentEpisodePlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentEpisodePlayingView.swift; sourceTree = "<group>"; };
 		EC3C61EA2A17F13C00029665 /* PodcastCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastCoverView.swift; sourceTree = "<group>"; };
 		EC3C61EC2A17F90100029665 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
-		EC3C61EE2A1836E500029665 /* PodcastItemThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastItemThumbnail.swift; sourceTree = "<group>"; };
+		EC3C61EE2A1836E500029665 /* PodcastItemThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastItemThumbnailView.swift; sourceTree = "<group>"; };
 		EC3C61F12A18378500029665 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		EC562E7E2A1A0EB400880399 /* DownloadButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadButtonView.swift; sourceTree = "<group>"; };
+		EC562E802A1A0FC600880399 /* BackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonView.swift; sourceTree = "<group>"; };
+		EC562E852A1A115700880399 /* EllipsisButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EllipsisButtonView.swift; sourceTree = "<group>"; };
 		ECE326D32A18C38700082BB1 /* PodcastListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListView.swift; sourceTree = "<group>"; };
 		ECE326D52A18D9B600082BB1 /* EpisodeWithLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeWithLineView.swift; sourceTree = "<group>"; };
 		ECE326D72A18E3A100082BB1 /* FilteringEpisodesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteringEpisodesView.swift; sourceTree = "<group>"; };
@@ -146,16 +152,51 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		EC562E822A1A110B00880399 /* PodcastDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				ECE326D72A18E3A100082BB1 /* FilteringEpisodesView.swift */,
+				EC3C61E02A17C92F00029665 /* EpisodeView.swift */,
+				EC3C61EA2A17F13C00029665 /* PodcastCoverView.swift */,
+				ECE326D52A18D9B600082BB1 /* EpisodeWithLineView.swift */,
+				EC1025F12A1916D80006568E /* PodcastCoverDetailView.swift */,
+				EC562E872A1A122F00880399 /* Toolbar */,
+			);
+			path = PodcastDetailView;
+			sourceTree = "<group>";
+		};
+		EC562E832A1A112000880399 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				EC3C61E82A17E74800029665 /* CurrentEpisodePlayingView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		EC562E842A1A112B00880399 /* PodcastListView */ = {
+			isa = PBXGroup;
+			children = (
+				EC3C61EE2A1836E500029665 /* PodcastItemThumbnailView.swift */,
+			);
+			path = PodcastListView;
+			sourceTree = "<group>";
+		};
+		EC562E872A1A122F00880399 /* Toolbar */ = {
+			isa = PBXGroup;
+			children = (
+				EC562E7E2A1A0EB400880399 /* DownloadButtonView.swift */,
+				EC562E802A1A0FC600880399 /* BackButtonView.swift */,
+				EC562E852A1A115700880399 /* EllipsisButtonView.swift */,
+			);
+			path = Toolbar;
+			sourceTree = "<group>";
+		};
 		ECE326D92A18F19A00082BB1 /* CustomControls */ = {
 			isa = PBXGroup;
 			children = (
-				EC3C61E02A17C92F00029665 /* EpisodeView.swift */,
-				EC3C61E82A17E74800029665 /* CurrentEpisodePlayingView.swift */,
-				EC3C61EA2A17F13C00029665 /* PodcastCoverView.swift */,
-				EC3C61EE2A1836E500029665 /* PodcastItemThumbnail.swift */,
-				ECE326D52A18D9B600082BB1 /* EpisodeWithLineView.swift */,
-				ECE326D72A18E3A100082BB1 /* FilteringEpisodesView.swift */,
-				EC1025F12A1916D80006568E /* PodcastCoverDetailView.swift */,
+				EC562E842A1A112B00880399 /* PodcastListView */,
+				EC562E832A1A112000880399 /* Shared */,
+				EC562E822A1A110B00880399 /* PodcastDetailView */,
 			);
 			path = CustomControls;
 			sourceTree = "<group>";
@@ -380,16 +421,19 @@
 				ECE326D42A18C38700082BB1 /* PodcastListView.swift in Sources */,
 				EC3C61F22A18378500029665 /* Utils.swift in Sources */,
 				EC3C61ED2A17F90100029665 /* UIImageExtensions.swift in Sources */,
+				EC562E7F2A1A0EB400880399 /* DownloadButtonView.swift in Sources */,
 				EC1025F22A1916D80006568E /* PodcastCoverDetailView.swift in Sources */,
 				EC3C61E62A17DDCC00029665 /* DurationExtensions.swift in Sources */,
 				EC3C61EB2A17F13C00029665 /* PodcastCoverView.swift in Sources */,
 				EC1025F42A19338A0006568E /* ContentView.swift in Sources */,
+				EC562E862A1A115700880399 /* EllipsisButtonView.swift in Sources */,
 				EC1025FA2A199A0A0006568E /* ScrollOffsetPreferenceKey.swift in Sources */,
+				EC562E812A1A0FC600880399 /* BackButtonView.swift in Sources */,
 				EC1025F02A1911FC0006568E /* ColorExtensions.swift in Sources */,
 				ECED09352A15213400F94EB1 /* Stub.swift in Sources */,
 				ECED09332A151ED300F94EB1 /* Episode.swift in Sources */,
 				ECE326DB2A18F1C500082BB1 /* PodcastColors.swift in Sources */,
-				EC3C61EF2A1836E500029665 /* PodcastItemThumbnail.swift in Sources */,
+				EC3C61EF2A1836E500029665 /* PodcastItemThumbnailView.swift in Sources */,
 				ECED09062A15150300F94EB1 /* SwiftCastApp.swift in Sources */,
 				EC1025F62A19375E0006568E /* MainView.swift in Sources */,
 				ECE326D82A18E3A100082BB1 /* FilteringEpisodesView.swift in Sources */,

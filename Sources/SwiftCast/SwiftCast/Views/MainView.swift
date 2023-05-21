@@ -24,7 +24,7 @@ struct MainView: View {
                 })
                 .tag(Tab.explore)
             ContentView(podcasts: podcasts) {
-                PodcastListView(podcasts: podcasts)
+                PodcastListView(podcasts: podcasts, paddingBottom: 80)
             }
             .tabItem({
                 Label("Bibliothèque", systemImage: "square.stack.fill")

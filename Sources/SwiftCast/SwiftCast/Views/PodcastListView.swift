@@ -4,16 +4,18 @@ struct PodcastListView: View {
     var podcasts: [Podcast]
     let columns = [GridItem(.flexible()), GridItem(.flexible())]
     
+    var paddingBottom: CGFloat = 0
+    
     var body: some View {
         NavigationStack {
            ScrollView {
                LazyVGrid(columns: columns, spacing: 0) {
                    ForEach(podcasts.sorted { $0.updateDate < $1.updateDate }, id: \.id) { podcast in
                        NavigationLink(value: podcast) {
-                           PodcastItemThumbnail(podcast: podcast)
+                           PodcastItemThumbnailView(podcast: podcast)
                        }
                        .navigationDestination(for: Podcast.self) { podcast in
-                           PodCastDetailView(podcast: podcast)
+                           PodcastDetailView(podcast: podcast, paddingBottom: paddingBottom)
                        }
                        .padding(.horizontal, 2)
                        .padding(.top, 24)
@@ -21,6 +23,7 @@ struct PodcastListView: View {
                }
                .navigationTitle("Podcasts")
                .padding(.horizontal, 20)
+               .padding(.bottom, paddingBottom)
            }
            .toolbar {
                Button(action: {}) {

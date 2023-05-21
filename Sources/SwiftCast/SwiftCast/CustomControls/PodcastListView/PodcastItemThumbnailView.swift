@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct PodcastItemThumbnail: View {
+struct PodcastItemThumbnailView: View {
     var podcast: Podcast
     
     var body: some View {
@@ -25,14 +25,14 @@ struct PodcastItemThumbnail: View {
     }
 }
 
-struct PodcastItemThumbnail_Previews: PreviewProvider {
+struct PodcastItemThumbnailView_Previews: PreviewProvider {
     static var previews: some View {
         var stub = Stub()
         let podcasts = stub.loadPodcasts()
         
         Group {
-            PodcastItemThumbnail(podcast: podcasts[4])
-            PodcastItemThumbnail(podcast: podcasts[4])
+            PodcastItemThumbnailView(podcast: podcasts[4])
+            PodcastItemThumbnailView(podcast: podcasts[4])
                 .preferredColorScheme(.dark)
         }
     }

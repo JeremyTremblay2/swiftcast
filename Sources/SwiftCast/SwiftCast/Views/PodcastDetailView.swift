@@ -7,50 +7,31 @@
 
 import SwiftUI
 
-struct PodCastDetailView: View {
+struct PodcastDetailView: View {
     var podcast: Podcast
     
+    var paddingBottom: CGFloat = 0
     var paddingLeading: CGFloat = 20
     var paddingTrailing: CGFloat = 20
     
     private let paddingHeightDetection: CGFloat = 254
     
-    @Environment(\.presentationMode) private var presentationMode
     @State private var backgroundColor: Color = .clear
     @State private var showBackButton: Bool = false
     @State private var offset = CGFloat.zero
     
     private var colorScheme: ColorScheme = .light
     
-    private var iconsColor: Color {
-        return showBackButton ? PodcastColors.primary : .white
-    }
-    
-    private var iconPauseColor: Color {
-        return showBackButton ? .white : PodcastColors.primary
-    }
-    
     private var navigationBarColor: Color {
         return showBackButton ? .clear : backgroundColor
     }
     
-    private var opacityValue: CGFloat {
-        return showBackButton ? 0.8 : 0.3
-    }
-    
-    init(podcast: Podcast) {
+    init(podcast: Podcast, paddingBottom: CGFloat = 0) {
         self.podcast = podcast
+        self.paddingBottom = paddingBottom
         let appearance = UINavigationBarAppearance()
-        UINavigationBar.appearance().standardAppearance = appearance
-        UINavigationBar.appearance().scrollEdgeAppearance = appearance
         loadBackgroundColor()
         colorScheme = backgroundColor.getBestColorScheme()
-        if colorScheme == .light {
-            appearance.titleTextAttributes = [.foregroundColor: UIColor.blue]
-        }
-        else {
-            appearance.titleTextAttributes = [.foregroundColor: UIColor.red]
-        }
     }
     
     var body: some View {
@@ -68,6 +49,7 @@ struct PodCastDetailView: View {
                     }
                 }
             }
+            .padding(.bottom, paddingBottom)
             .background(GeometryReader { // Used to get the scroll value and to change th toolbar behavior
                 Color.clear.preference(key: ScrollOffsetPreferenceKey.self,
                     value: -$0.frame(in: .named("scroll")).origin.y)
@@ -79,100 +61,34 @@ struct PodCastDetailView: View {
             }
         }
         .coordinateSpace(name: "scroll")
-        .navigationTitle(podcast.title)
         .navigationBarTitleDisplayMode(.inline)
-        .onAppear {
-            loadBackgroundColor()
-        }
-        .toolbarBackground(navigationBarColor, for: .navigationBar)
+        .listStyle(.grouped)
+        .navigationBarBackButtonHidden(!showBackButton)
+        .toolbarBackground(!showBackButton ? navigationBarColor : .clear, for: .navigationBar)
         .toolbar {
-            if !showBackButton {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: {
-                        presentationMode.wrappedValue.dismiss()
-                    }) {
-                        Image(systemName: "chevron.left")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 18, height: 18)
-                            .foregroundColor(iconsColor)
-                            .font(Font.title.weight(.bold))
-                            .padding(.leading, 6)
-                            .padding(.bottom, 8)
-                    }
-                    .padding(.horizontal, 4)
-                    .padding(.top, 6)
-                    .padding(.bottom, -4)
-                    .background(PodcastColors.backgroundSecondary.opacity(opacityValue))
-                    .clipShape(Circle())
-                }
+            ToolbarItem(placement: .navigationBarLeading) {
+                BackButtonView(showBackButton: showBackButton)
+            }
+            ToolbarItem {
+                DownloadButtonView(showBackButton: showBackButton)
+            }
+            ToolbarItem {
+                EllipsisButtonView(showBackButton: showBackButton)
             }
             ToolbarItem(placement: .principal) {
                 VStack {
-                    if !showBackButton {
+                    if showBackButton {
                         Text(podcast.title)
                             .font(.title3)
                             .foregroundColor(PodcastColors.foregroundPrimary)
                             .environment(\.colorScheme, colorScheme)
                     }
-                    else {
-                        Text(podcast.title)
-                            .font(.title3)
-                            .foregroundColor(PodcastColors.foregroundPrimary)
-                    }
                 }
             }
-            ToolbarItem {
-                ZStack {
-                    Button(action: {}) {
-                        Image(systemName: "arrow.down")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 20, height: 20)
-                            .foregroundColor(iconsColor)
-                            .font(Font.title.weight(.bold))
-                    }
-                    .background(PodcastColors.backgroundSecondary.opacity(opacityValue))
-                    .clipShape(Circle())
-                    
-                    HStack {
-                        Spacer()
-                        VStack {
-                            Spacer()
-                            Button(action: {}) {
-                                Image(systemName: "pause.fill")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 7, height: 7)
-                                    .foregroundColor(iconPauseColor.opacity(0.9))
-                                    .font(Font.title.weight(.heavy))
-                            }
-                            .background(iconsColor)
-                            .clipShape(Circle())
-                        }
-                    }
-                    .padding(.leading, 20)
-                    .padding(.top, 14)
-                }
-            }
-            ToolbarItem {
-                Button(action: {}) {
-                    Image(systemName: "ellipsis")
-                        .foregroundColor(iconsColor)
-                        .padding(.trailing, 8)
-                }
-                .padding(.vertical, 8)
-                .background(PodcastColors.backgroundSecondary.opacity(opacityValue))
-                .clipShape(Circle())
-                .foregroundColor(PodcastColors.primary)
-                
-            }
-            
         }
-        .listStyle(.grouped)
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationBarBackButtonHidden(!showBackButton)
-        .coordinateSpace(name: "scroll")
+        .onAppear {
+            loadBackgroundColor()
+        }
     }
     
     private func loadBackgroundColor() {
@@ -186,8 +102,8 @@ struct PodCastDetailView_Previews: PreviewProvider {
         var stub = Stub()
         let podcasts = stub.loadPodcasts()
         Group {
-            PodCastDetailView(podcast: podcasts[0])
-            PodCastDetailView(podcast: podcasts[2]).preferredColorScheme(.dark)
+            PodcastDetailView(podcast: podcasts[0])
+            PodcastDetailView(podcast: podcasts[2]).preferredColorScheme(.dark)
         }
     }
 }

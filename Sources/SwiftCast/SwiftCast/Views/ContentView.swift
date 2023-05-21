@@ -28,10 +28,10 @@ struct ContentView_Previews: PreviewProvider {
         let podcasts = stub.loadPodcasts()
         Group {
             ContentView(podcasts: podcasts) {
-                PodcastListView(podcasts: podcasts)
+                PodcastListView(podcasts: podcasts, paddingBottom: 80)
             }
             ContentView(podcasts: podcasts) {
-                PodcastListView(podcasts: podcasts)
+                PodcastListView(podcasts: podcasts, paddingBottom: 80)
                     .preferredColorScheme(.dark)
             }
         }

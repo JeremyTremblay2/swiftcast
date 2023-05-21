@@ -54,6 +54,8 @@ struct CurrentEpisodePlayingView : View {
             .buttonStyle(PlainButtonStyle())
             .padding(.trailing, 20)
         }
+        
+        .padding(.vertical, 8)
         .background(.thinMaterial)
     }
 }
