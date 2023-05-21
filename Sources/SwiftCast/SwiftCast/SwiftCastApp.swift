@@ -14,6 +14,7 @@ struct SwiftCastApp: App {
         let podcasts = stub.loadPodcasts()
         WindowGroup {
             MainView(podcasts: podcasts)
+            MainView(podcasts: podcasts).preferredColorScheme(.dark)
         }
     }
 }
