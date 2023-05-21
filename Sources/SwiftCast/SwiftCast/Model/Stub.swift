@@ -5,40 +5,38 @@ struct Stub {
     private var menuSections: [MenuSection] = []
     
     public mutating func loadPodcasts() -> [Podcast] {
-        guard !podcasts.isEmpty else {
+        guard podcasts.isEmpty else {
             return podcasts
         }
         
         podcasts.append(
-            Podcast(withImage: "chaleur_humaine.png", withTitle: "Chaleur Humaine",
-                    withLastUpdateDate: generateDate(fromYear: 2023, fromMonth: 5, fromDay: 2),
+            Podcast(withImage: "chaleur_humaine", withTitle: "Chaleur Humaine",
                     fromAuthor: "Le Monde", withNote: 4.8, fromManyReviews: 458, fromCategory: "Actualités",
                     withAPublicationFrequency: .everyWeek, withEpisodes: [
                         Episode(withDate: generateDate(fromYear: 2023, fromMonth: 5, fromDay: 2),
-                                withTitle: "7 Comment se libérer de la voiture individuelle ?",
+                                withTitle: "7. Comment se libérer de la voiture individuelle ?",
                                 withDescription: "**** Recevez gratuitement tous les mardis l'infolettre Chaleur humaine en vous inscrivant...",
                                 withDuration: generateDuration(withHours: 0, withMinutes: 49, withSeconds: 10)),
                         Episode(withDate: generateDate(fromYear: 2023, fromMonth: 4, fromDay: 25),
-                                withTitle: "6 Gestes individuels et actions collectives, comment agir pour le climat ? (EN PUBLIC)",
+                                withTitle: "6. Gestes individuels et actions collectives, comment agir pour le climat ? (EN PUBLIC)",
                                 withDescription: "**** Recevez gratuitement tous les mardis l'infolettre Chaleur humaine en vous inscrivant...",
                                 withDuration: generateDuration(withHours: 1, withMinutes: 4, withSeconds: 18)),
                         Episode(withDate: generateDate(fromYear: 2023, fromMonth: 4, fromDay: 18),
-                                withTitle: "5 Climat: la transition va t-elle créer ou détruire des emplois ? ",
+                                withTitle: "5. Climat: la transition va t-elle créer ou détruire des emplois ? ",
                                 withDescription: "**** Recevez gratuitement tous les mardis l'infolettre Chaleur humaine en vous inscrivant...",
                                 withDuration: generateDuration(withHours: 0, withMinutes: 46, withSeconds: 25)),
                         Episode(withDate: generateDate(fromYear: 2023, fromMonth: 4, fromDay: 25),
-                                withTitle: "4 Faut-il arrêter de prendre l'avion ?",
-                                withDescription: "**** Recevez gratuitement tous les mardis l'infolettre Chaleur humaine en vous inscrivant ici... \nLe secteur aérien pèse nviron 2,5% des...",
+                                withTitle: "4. Faut-il arrêter de prendre l'avion ?",
+                                withDescription: "**** Recevez gratuitement tous les mardis l'infolettre Chaleur humaine en vous inscrivant là\nLe secteur aérien pèse environ 2,5% des...",
                                 withDuration: generateDuration(withHours: 0, withMinutes: 45, withSeconds: 34)),
                         Episode(withDate: generateDate(fromYear: 2023, fromMonth: 4, fromDay: 25),
-                                withTitle: "3 La Chine peut-elle réussir sa transition climatique ?",
+                                withTitle: "3. La Chine peut-elle réussir sa transition climatique ?",
                                 withDescription: "**** Recevez gratuitement tous les mardis l'infolettre Chaleur humaine en vous inscrivant...",
                                 withDuration: generateDuration(withHours: 0, withMinutes: 33, withSeconds: 30)),
                     ]
             )!)
         podcasts.append(
-            Podcast(withImage: "science_cqfd.png", withTitle: "La Science, CQFD",
-                    withLastUpdateDate: generateDate(fromYear: 2023, fromMonth: 5, fromDay: 2),
+            Podcast(withImage: "la_science_cqfd", withTitle: "La Science, CQFD",
                     fromAuthor: "France Culture", withNote: 4.4, fromManyReviews: 1800, fromCategory: "Sciences",
                     withAPublicationFrequency: .unknow, withEpisodes: [
                         Episode(withDate: generateDate(fromYear: 2023, fromMonth: 5, fromDay: 2),
@@ -65,8 +63,7 @@ struct Stub {
             )!
         )
         podcasts.append(
-            Podcast(withImage: "code_a_change.png", withTitle: "Le code à changé",
-                    withLastUpdateDate: generateDate(fromYear: 2023, fromMonth: 5, fromDay: 2),
+            Podcast(withImage: "le_code_a_change", withTitle: "Le code à changé",
                     fromAuthor: "France Culture", withNote: 4.8, fromManyReviews: 539, fromCategory: "Actualités technologiques",
                     withAPublicationFrequency: .unknow, withEpisodes: [
                         Episode(withDate: generateDate(fromYear: 2023, fromMonth: 5, fromDay: 2),
@@ -81,8 +78,7 @@ struct Stub {
             )!
         )
         podcasts.append(
-            Podcast(withImage: "open_jazz.png", withTitle: "Open jazz",
-                    withLastUpdateDate: generateDate(fromYear: 2023, fromMonth: 5, fromDay: 2),
+            Podcast(withImage: "open_jazz", withTitle: "Open jazz",
                     fromAuthor: "France Musique", withNote: 4.3, fromManyReviews: 182, fromCategory: "Musique",
                     withAPublicationFrequency: .unknow, withEpisodes: [
                         Episode(withDate: generateDate(fromYear: 2023, fromMonth: 5, fromDay: 2),
@@ -101,8 +97,7 @@ struct Stub {
             )!
         )
         podcasts.append(
-            Podcast(withImage: "le_moment_meurice.png", withTitle: "Le moment Meurice",
-                    withLastUpdateDate: generateDate(fromYear: 2023, fromMonth: 5, fromDay: 2),
+            Podcast(withImage: "le_moment_meurice", withTitle: "Le moment Meurice",
                     fromAuthor: "France Inter", withNote: 4.6, fromManyReviews: 4232, fromCategory: "Actualités technologiques",
                     withAPublicationFrequency: .unknow, withEpisodes: [
                         Episode(withDate: generateDate(fromYear: 2023, fromMonth: 5, fromDay: 2),
@@ -121,7 +116,7 @@ struct Stub {
     }
     
     public mutating func loadMenuSections() -> [MenuSection] {
-        guard !menuSections.isEmpty else {
+        guard menuSections.isEmpty else {
             return menuSections
         }
         
