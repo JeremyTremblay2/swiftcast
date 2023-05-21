@@ -10,12 +10,14 @@ struct ContentView<Content: View>: View {
     }
 
     var body: some View {
-        VStack(spacing: 0) {
+        ZStack {
             content
-            CurrentEpisodePlayingView(podcastImageName: podcasts.first!.imageName,
-                                      podcastName: podcasts.first!.title,
-                                      episode: (podcasts.first?.episodes.first)!)
-
+            VStack {
+                Spacer()
+                CurrentEpisodePlayingView(podcastImageName: podcasts.first!.imageName,
+                                          podcastName: podcasts.first!.title,
+                                          episode: (podcasts.first?.episodes.first)!)
+            }
         }
     }
 }
