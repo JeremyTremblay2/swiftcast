@@ -51,7 +51,7 @@ Here you can see the actual visual of the application
 
 ## 📌 Documentation
 
-The [Wiki]("https://codefirst.iut.uca.fr/git/jeremy.tremblay/SwiftCast/wiki") is actually empty. The documantion will be added soon!
+The [Wiki](https://codefirst.iut.uca.fr/git/jeremy.tremblay/SwiftCast/wiki) is actually empty. The documantion will be added soon!
 
 Also, look at the `Documentation` folder at the root of this repository!
 
