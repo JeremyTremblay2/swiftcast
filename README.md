@@ -16,6 +16,8 @@ Here you can see the actual visual of the application
     <img src="./Documentation/doc_images/list_light.png" height="400"/>
     <img src="./Documentation/doc_images/chaleur_humaine_1_light.png" height="400"/>
     <img src="./Documentation/doc_images/chaleur_humaine_2_light.png" height="400"/>
+</p>
+<p align="center">
     <img src="./Documentation/doc_images/le_code_a_change_light.png" height="400"/>
     <img src="./Documentation/doc_images/moment_meurice_light.png" height="400"/>
     <img src="./Documentation/doc_images/la_science_cqfd_light.png" height="400"/>
@@ -49,7 +51,7 @@ Here you can see the actual visual of the application
 
 ## 📌 Documentation
 
-The [Wiki]("https://codefirst.iut.uca.fr/git/jeremy.tremblay/swiftcast/wiki") is actually empty. The documantion will be added soon!
+The [Wiki]("https://codefirst.iut.uca.fr/git/jeremy.tremblay/SwiftCast/wiki") is actually empty. The documantion will be added soon!
 
 Also, look at the `Documentation` folder at the root of this repository!
 
